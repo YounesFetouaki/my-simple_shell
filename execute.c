@@ -5,6 +5,14 @@
  *
  * Return: The result of the corresponding function or launch function
  */
+char *built_in_str[] = {
+		"exit",
+		"env"
+	};
+int (*built_in_func[]) (char **) = {
+		&built_in_exit,
+		&built_in_env
+	};
 int execute(char **args)
 {
 	int i;

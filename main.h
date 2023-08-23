@@ -22,17 +22,8 @@ char *find_path(char *command);
 int built_in_exit(char **args);
 int built_in_env(char **args);
 int num_built_ins(void);
-/* Array of built-in commands and their corresponding functions */
+/* Array of built-in commands and their corresponding function */
 extern char *built_in_str[];
 extern int (*built_in_func[])(char **);
-/* The number of built-in commands */
-char *built_in_str[] = {
-	"exit",
-	"env"
-};
-int (*built_in_func[]) (char **) = {
-	&built_in_exit,
-	&built_in_env
-};
 
 #endif

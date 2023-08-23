@@ -1,5 +1,4 @@
 #include "main.h"
-
 /**
  * execute - Function to execute the arguments
  * @args: The arguments parsed from the input line

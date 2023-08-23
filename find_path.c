@@ -2,6 +2,8 @@
 /* Function to find the path of an executable */
 char *find_path(char *command)
 {
+     char *path = getenv("PATH"); /* Get the value of the PATH environment variable */
+    char *token = strtok(path, ":"); /* Get the first token (directory) in the PATH */
   struct stat st; /* The stat structure to check if the file exists and is executable */
 
   /* Check if the provided command is an absolute path */
@@ -12,8 +14,7 @@ char *find_path(char *command)
     return NULL; /* Return NULL if the absolute path is not executable */
   }
 
-  char *path = getenv("PATH"); /* Get the value of the PATH environment variable */
-
+ 
   if (path == NULL) { /* If the PATH is not set */
     return NULL; /* Return NULL */
   }
@@ -24,7 +25,7 @@ char *find_path(char *command)
     return NULL; /* Return NULL */
   }
 
-  char *token = strtok(path, ":"); /* Get the first token (directory) in the PATH */
+  
 
   while (token != NULL) { /* While there are more tokens (directories) in the PATH */
     char *buffer = malloc(strlen(token) + strlen(command) + 2); /* Allocate memory for the buffer */

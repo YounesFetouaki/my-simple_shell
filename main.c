@@ -1,10 +1,10 @@
 #include "main.h"
 
-
-
-
-
-/* Main function */
+/**
+ * main - Main function
+ *
+ * Return: EXIT_SUCCESS on success, otherwise EXIT_FAILURE
+ */
 int main(void)
 {
 	char *line; /* The input line */
@@ -21,16 +21,5 @@ int main(void)
 		free(args); /* Free the allocated memory for the arguments */
 	} while (status); /* Loop until the status is zero */
 
-	return EXIT_SUCCESS;
+	return (EXIT_SUCCESS);
 }
-
-
-
-
-
-
-
-
-
-
-

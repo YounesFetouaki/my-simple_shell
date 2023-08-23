@@ -25,5 +25,14 @@ int num_built_ins(void);
 /* Array of built-in commands and their corresponding functions */
 extern char *built_in_str[];
 extern int (*built_in_func[])(char **);
+/* The number of built-in commands */
+char *built_in_str[] = {
+	"exit",
+	"env"
+};
+int (*built_in_func[]) (char **) = {
+	&built_in_exit,
+	&built_in_env
+};
 
 #endif

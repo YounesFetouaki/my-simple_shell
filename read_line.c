@@ -9,14 +9,14 @@ char *read_line(void)
   nread = getline(&line, &bufsize, stdin); /* Read a line from stdin */
 
   if (nread == -1) { /* If there is an error or EOF */
-    if (feof(stdin)) { /* If it is EOF */
-      printf("\n"); /* Print a new line */
-      exit(EXIT_SUCCESS); /* Exit with success */
-    }
-    else { /* If it is an error */
-      perror("read_line"); /* Print the error message */
-      exit(EXIT_FAILURE); /* Exit with failure */
-    }
+	if (feof(stdin)) { /* If it is EOF */
+	  printf("\n"); /* Print a new line */
+	  exit(EXIT_SUCCESS); /* Exit with success */
+	}
+	else { /* If it is an error */
+	  perror("read_line"); /* Print the error message */
+	  exit(EXIT_FAILURE); /* Exit with failure */
+	}
   }
 
   return line; /* Return the input line */

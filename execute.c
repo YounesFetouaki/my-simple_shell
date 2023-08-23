@@ -5,6 +5,8 @@
  *
  * Return: The result of the corresponding function or launch function
  */
+int execute(char **args)
+{
 char *built_in_str[] = {
 		"exit",
 		"env"
@@ -13,8 +15,7 @@ int (*built_in_func[]) (char **) = {
 		&built_in_exit,
 		&built_in_env
 	};
-int execute(char **args)
-{
+
 	int i;
 
 	if (args[0] == NULL) /* If there are no arguments */

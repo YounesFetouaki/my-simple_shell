@@ -21,8 +21,9 @@ int launch(char **args);
 char *find_path(char *command);
 int built_in_exit(char **args);
 int built_in_env(char **args);
-int num_built_ins();
+int num_built_ins(void);
 /* Array of built-in commands and their corresponding functions */
 extern char *built_in_str[];
 extern int (*built_in_func[])(char **);
+
 #endif

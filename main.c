@@ -9,10 +9,10 @@ int main(void)
 	char *line; /* The input line */
 	char **args; /* The arguments parsed from the input line */
 	int status; /* The status of the execution */
-	int output_is_terminal = isatty(fileno(stdout));
+	/*int output_is_terminal = isatty(fileno(stdout));*/
 
 	do {
-		if (output_is_terminal)
+		if (isatty(STDIN_FILENO) != 0)
 		{
 			printf("$ "); /* Print the prompt */
 		}

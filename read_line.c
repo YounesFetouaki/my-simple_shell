@@ -17,7 +17,7 @@ char *read_line(void)
 	{
 		if (feof(stdin)) /* If it is EOF */
 		{
-			printf("\n"); /* Print a new line */
+			/* Print a new line */
 			exit(EXIT_SUCCESS); /* Exit with success */
 		}
 		else /* If it is an error */

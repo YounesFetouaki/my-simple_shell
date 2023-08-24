@@ -9,9 +9,13 @@ int main(void)
 	char *line; /* The input line */
 	char **args; /* The arguments parsed from the input line */
 	int status; /* The status of the execution */
+	int output_is_terminal = isatty(fileno(stdout));
 
 	do {
-		printf("$ "); /* Print the prompt */
+		if (output_is_terminal)
+		{
+			printf("$ "); /* Print the prompt */
+		}
 		line = read_line(); /* Read the input line */
 		args = split_line(line); /* Split the input line into arguments */
 		status = execute(args); /* Execute the arguments */
